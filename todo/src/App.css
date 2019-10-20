@@ -84,11 +84,11 @@ time,
 mark,
 audio,
 video {
-  margin        : 0;
-  padding       : 0;
-  border        : 0;
-  font-size     : 100%;
-  font          : inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
 }
 
@@ -125,13 +125,13 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
 table {
   border-collapse: collapse;
-  border-spacing : 0;
+  border-spacing: 0;
 }
 
 * {
@@ -139,11 +139,18 @@ table {
 }
 
 html {
-  font-size : 62.5%;
+  font-size: 62.5%;
+}
+
+.task.completed {
+  text-decoration: line-through;
+}
+
+html {
   text-align: center;
 }
 
 h1 {
   font-size: 7rem;
-  margin   : 2rem auto;
+  margin: 2rem 5%;
 }
