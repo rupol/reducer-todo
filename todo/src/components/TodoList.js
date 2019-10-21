@@ -11,14 +11,20 @@ const FlexContainer = styled.div`
 `;
 
 const TodoList = props => {
-  const markCompleted = (event, taskID) => {
+  const markCompleted = (event, itemID) => {
     event.preventDefault();
+    props.dispatch({ type: "MARK_COMPLETED", payload: itemID });
   };
 
   return (
     <FlexContainer>
-      {props.state.todos.map(item => (
-        <Todo key={item.id} item={item} onClick={markCompleted} />
+      {props.state.map(item => (
+        <Todo
+          key={item.id}
+          item={item}
+          value={item.id}
+          onClick={e => markCompleted(e, item.id)}
+        />
       ))}
     </FlexContainer>
   );
