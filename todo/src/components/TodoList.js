@@ -1,8 +1,6 @@
-import React, { useState, useReducer } from "react";
+import React from "react";
 import Todo from "./Todo";
 import styled from "styled-components";
-
-import { initialState, reducer } from "../reducers/reducer";
 
 const FlexContainer = styled.div`
   display: flex;
@@ -12,30 +10,14 @@ const FlexContainer = styled.div`
   align-content: space-around;
 `;
 
-const TodoList = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
+const TodoList = props => {
   const markCompleted = (event, taskID) => {
     event.preventDefault();
-
-    // this.setState({
-    //   todo: this.state.todo.map(task => {
-    //     if (task.id === taskID) {
-    //       return {
-    //         ...task, // merge existing task
-    //         completed: !task.completed // set completed to opposite value
-    //       };
-    //     } else {
-    //       return task;
-    //     }
-    //   })
-    // });
   };
 
   return (
     <FlexContainer>
-      {console.log(state)}
-      {state.map(item => (
+      {props.state.todos.map(item => (
         <Todo key={item.id} item={item} onClick={markCompleted} />
       ))}
     </FlexContainer>

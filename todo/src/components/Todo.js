@@ -23,7 +23,6 @@ const Todo = props => {
       className={`task${props.item.completed ? " completed" : ""}`}
       onClick={props.onClick}
     >
-      {console.log(props)}
       <TaskName>{props.item.item}</TaskName>
     </TaskCard>
   );
