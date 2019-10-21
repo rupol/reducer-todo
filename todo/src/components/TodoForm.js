@@ -71,6 +71,7 @@ const TodoForm = props => {
 
   const clearCompleted = event => {
     event.preventDefault();
+    props.dispatch({ type: "CLEAR_COMPLETED" });
   };
 
   return (
